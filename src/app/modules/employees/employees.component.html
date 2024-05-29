@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <button>
+    <input type="file"
+           required
+           accept=".pdf"
+           (change)="uploadFile($event)"/>
+    <span>Upload File</span>
+  </button>
+  <span>{{fileName}}</span>
+
+</div>

@@ -1,0 +1,21 @@
+<div class="question-wrapper">
+  <ng-container *ngFor="let question of questions; let i = index">
+    <div class="questions">
+      <label>{{(i + 1)}}. {{question.question}}</label>
+      <div class="questions-options">
+        <div *ngFor="let option of question.options">
+          <input
+            type="radio"
+            [id]="option.value"
+            [name]="question.question"
+            [value]="option.value"
+            [(ngModel)]="question.selectedOption"/>
+          <label [for]="option.value">{{option.label}}</label>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <div class="actions">
+    <button (click)="onSubmit()">Submit</button>
+  </div>
+</div>
